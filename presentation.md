@@ -5,7 +5,21 @@ paginate: true
 author: Technical Writer
 title: API Documentation V2.0
 backgroundColor: #ffffff
+footer: 'Documentation v2.0 | 25ds1000058@ds.study.iitm.ac.in'
 ---
+
+<style>
+:root {
+  --color-highlight: #d9453a;
+}
+section {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 1.5rem;
+}
+h1 {
+  color: #2c3e50;
+}
+</style>
 
 # API Product Documentation
 ## Version 2.0 Release Notes
@@ -28,11 +42,6 @@ The new architecture relies on microservices to ensure high availability.
 
 ---
 
-<style scoped>
-h1 { color: #2c3e50; }
-section { font-size: 1.5rem; }
-</style>
-
 # Algorithmic Efficiency
 
 To improve response times, we optimized the search algorithm.
@@ -53,7 +62,7 @@ The probability of collision is defined as $P(A) \approx 1 - e^{-\frac{n^2}{2d}}
 
 # Internal Roadmap
 
-This slide uses explicit **local directives** to change the background color, text color, and header for this specific slide only.
+This slide uses multiple **Marp directives** (Header, Background Color, and Text Color) to distinguish it from the public slides.
 
 1. **Q1:** Beta testing with stakeholders
 2. **Q2:** Public API release
