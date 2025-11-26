@@ -7,7 +7,7 @@ paginate: true
 ---
 
 <style>
-/* Custom theme-ish styling (overrides default) */
+/* Custom theme-style overrides on top of `default` */
 section {
   background: #020617;
   color: #e5e7eb;
@@ -60,7 +60,7 @@ blockquote {
 
 - Maintain documentation as **Markdown** in version control (Git)
 - Reuse content for:
-  - Web (HTML GitHub Pages)
+  - Web (HTML via GitHub Pages)
   - PDF handouts
   - PowerPoint slide decks
 - Keep slides **close to the source docs** to avoid duplication
@@ -81,9 +81,42 @@ blockquote {
 | `package.json`      | Build scripts for Marp CLI        |
 | `.github/workflows` | CI to export HTML/PDF/PPTX        |
 
-- Single source of truth in Git
-- Reviewable via pull requests
-- Easy rollback by tagging releases
+- Single source of truth in Git  
+- Reviewable via pull requests  
+- Easy rollback by tagging releases  
+
+---
+
+<!-- _header: **ProductX Docs** -->
+<!-- _footer: Background image example -->
+
+![bg cover](images/productx-architecture.png)
+
+# ProductX Architecture
+
+- High-level system diagram as background  
+- Foreground text kept intentionally minimal  
+
+> Replace `images/productx-architecture.png` with your actual architecture image.
+
+---
+
+<!-- _header: **ProductX Docs** -->
+<!-- _footer: Styling via directives -->
+<!-- _backgroundColor: #020617 -->
+<!-- _color: #e5e7eb -->
+<!-- _class: lead -->
+
+# Marp Directives in Use
+
+- `paginate: true` – page numbers on every slide  
+- `<!-- _header: ... -->` – persistent slide header  
+- `<!-- _footer: ... -->` – version + confidentiality footer  
+- `<!-- _class: lead -->` – emphasize key slides  
+- `<!-- _backgroundColor: ... -->` / `<!-- _color: ... -->` – per-slide styling  
+- `![bg cover](...)` – full-slide background images  
+
+All directives live in the same Markdown file for easy maintenance.
 
 ---
 
@@ -93,7 +126,7 @@ blockquote {
 ## Build & Export (Marp CLI)
 
 ```bash
-# HTML for GitHub Pages
+# HTML for web (e.g., GitHub Pages)
 marp docs/slides.md -o docs/dist/slides.html
 
 # PDF handout
