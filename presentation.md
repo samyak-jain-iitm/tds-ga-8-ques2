@@ -7,6 +7,8 @@ title: API Documentation V2.0
 backgroundColor: #ffffff
 ---
 
+<!-- _class: intro -->
+
 # API Product Documentation
 ## Version 2.0 Release Notes
 
