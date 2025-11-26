@@ -1,73 +1,106 @@
 ---
 marp: true
-theme: gaia
+title: ProductX Documentation Presentation
+author: Technical Writer – 25ds1000058@ds.study.iitm.ac.in
+theme: default
 paginate: true
-author: Technical Writer
-title: API Documentation V2.0
-backgroundColor: #ffffff
-footer: 'Documentation v2.0 | 25ds1000058@ds.study.iitm.ac.in'
 ---
 
 <style>
-:root {
-  --color-highlight: #d9453a;
-}
+/* Custom theme-ish styling (overrides default) */
 section {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  font-size: 1.5rem;
+  background: #020617;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-h1 {
-  color: #2c3e50;
+h1, h2, h3 {
+  color: #38bdf8;
+}
+a {
+  color: #22c55e;
+}
+code {
+  font-size: 0.9em;
+  padding: 0.1em 0.2em;
+  border-radius: 4px;
+  background: rgba(15,23,42,0.9);
+}
+table {
+  width: 100%;
+}
+th, td {
+  padding: 0.25em 0.5em;
+}
+blockquote {
+  border-left: 4px solid #38bdf8;
+  padding-left: 0.75em;
+  color: #e5e7eb;
+  font-style: italic;
 }
 </style>
 
-# API Product Documentation
-## Version 2.0 Release Notes
+<!-- _class: lead -->
+<!-- _header: **ProductX Docs** -->
+<!-- _footer: ProductX v1.0 – Internal Use Only -->
 
-**Contact:** 25ds1000058@ds.study.iitm.ac.in
+# ProductX  
+# Documentation Presentation
 
----
+**Technical Writer**  
+25ds1000058@ds.study.iitm.ac.in  
 
-![bg right:40%](https://images.unsplash.com/photo-1558494949-ef2bb6db8744?auto=format&fit=crop&w=800&q=80)
-
-# System Architecture
-
-The new architecture relies on microservices to ensure high availability.
-
-- **Scalability:** Horizontal scaling supported
-- **Reliability:** 99.99% Uptime SLA
-- **Security:** OAuth2 implementation
-
-*See the diagram on the right for the data flow.*
+> Maintainable, versioned, and exportable documentation for ProductX.
 
 ---
 
-# Algorithmic Efficiency
+<!-- _header: **ProductX Docs** -->
+<!-- _footer: Why a Marp-based deck? -->
 
-To improve response times, we optimized the search algorithm.
+## Objectives
 
-### Complexity Analysis
-We reduced the time complexity from quadratic to log-linear:
-
-$$
-T(n) = 2T\left(\frac{n}{2}\right) + O(n) \Rightarrow O(n \log n)
-$$
-
-### Probability Formula
-Success rate calculation:
-
-The probability of collision is defined as $P(A) \approx 1 - e^{-\frac{n^2}{2d}}$.
+- Maintain documentation as **Markdown** in version control (Git)
+- Reuse content for:
+  - Web (HTML GitHub Pages)
+  - PDF handouts
+  - PowerPoint slide decks
+- Keep slides **close to the source docs** to avoid duplication
+- Enable **automated builds** via CI/CD
 
 ---
 
-# Internal Roadmap
+<!-- _header: **ProductX Docs** -->
+<!-- _footer: Repository layout -->
 
-This slide uses multiple **Marp directives** (Header, Background Color, and Text Color) to distinguish it from the public slides.
+## Repository Structure
 
-1. **Q1:** Beta testing with stakeholders
-2. **Q2:** Public API release
-3. **Q3:** Deprecation of V1.0 endpoints
+| Path                | Purpose                           |
+| ------------------- | --------------------------------- |
+| `docs/slides.md`    | Main Marp presentation            |
+| `docs/images/`      | Diagrams & screenshots            |
+| `docs/themes/`      | Optional custom CSS themes        |
+| `package.json`      | Build scripts for Marp CLI        |
+| `.github/workflows` | CI to export HTML/PDF/PPTX        |
 
-```javascript
-// Deprecation Warning Example
-console.warn("Endpoint /v1/auth is deprecated. Use /v2/auth.");
+- Single source of truth in Git
+- Reviewable via pull requests
+- Easy rollback by tagging releases
+
+---
+
+<!-- _header: **ProductX Docs** -->
+<!-- _footer: Build & export with Marp -->
+
+## Build & Export (Marp CLI)
+
+```bash
+# HTML for GitHub Pages
+marp docs/slides.md -o docs/dist/slides.html
+
+# PDF handout
+marp docs/slides.md --pdf --allow-local-files
+
+# PowerPoint deck
+marp docs/slides.md --pptx
+
+# Images for marketing or docs
+marp docs/slides.md --images png
