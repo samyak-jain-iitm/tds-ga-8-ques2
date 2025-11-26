@@ -7,7 +7,9 @@ title: API Documentation V2.0
 backgroundColor: #ffffff
 ---
 
-<!-- _class: intro -->
+<!-- _class: lead -->
+
+<!-- _paginate: false -->
 
 # API Product Documentation
 ## Version 2.0 Release Notes
@@ -15,6 +17,10 @@ backgroundColor: #ffffff
 **Contact:** 25ds1000058@ds.study.iitm.ac.in
 
 ---
+
+<!-- _header: System Architecture Overview -->
+
+<!-- Slide with Background Image -->
 
 ![bg right:40%](https://images.unsplash.com/photo-1558494949-ef2bb6db8744?auto=format&fit=crop&w=800&q=80)
 
@@ -29,6 +35,8 @@ The new architecture relies on microservices to ensure high availability.
 *See the diagram on the right for the data flow.*
 
 ---
+
+<!-- Custom Theme Specification via Style Block -->
 
 <style scoped>
 h1 { color: #2c3e50; }
@@ -52,6 +60,13 @@ Success rate calculation:
 The probability of collision is defined as $P(A) \approx 1 - e^{-\frac{n^2}{2d}}$.
 
 ---
+
+<!-- _backgroundColor: #f0f8ff -->
+
+<!-- _color: #1a1a1a -->
+
+<!-- _header: INTERNAL USE ONLY -->
+
 
 # Internal Roadmap
 
