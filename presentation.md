@@ -1,139 +1,64 @@
 ---
 marp: true
-title: ProductX Documentation Presentation
-author: Technical Writer – 25ds1000058@ds.study.iitm.ac.in
-theme: default
+theme: gaia
 paginate: true
+author: Technical Writer
+title: API Documentation V2.0
+backgroundColor: #ffffff
 ---
 
-<style>
-/* Custom theme-style overrides on top of `default` */
-section {
-  background: #020617;
-  color: #e5e7eb;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-h1, h2, h3 {
-  color: #38bdf8;
-}
-a {
-  color: #22c55e;
-}
-code {
-  font-size: 0.9em;
-  padding: 0.1em 0.2em;
-  border-radius: 4px;
-  background: rgba(15,23,42,0.9);
-}
-table {
-  width: 100%;
-}
-th, td {
-  padding: 0.25em 0.5em;
-}
-blockquote {
-  border-left: 4px solid #38bdf8;
-  padding-left: 0.75em;
-  color: #e5e7eb;
-  font-style: italic;
-}
+# API Product Documentation
+## Version 2.0 Release Notes
+
+**Contact:** 25ds1000058@ds.study.iitm.ac.in
+
+---
+
+![bg right:40%](https://images.unsplash.com/photo-1558494949-ef2bb6db8744?auto=format&fit=crop&w=800&q=80)
+
+# System Architecture
+
+The new architecture relies on microservices to ensure high availability.
+
+- **Scalability:** Horizontal scaling supported
+- **Reliability:** 99.99% Uptime SLA
+- **Security:** OAuth2 implementation
+
+*See the diagram on the right for the data flow.*
+
+---
+
+<style scoped>
+h1 { color: #2c3e50; }
+section { font-size: 1.5rem; }
 </style>
 
-<!-- _class: lead -->
-<!-- _header: **ProductX Docs** -->
-<!-- _footer: ProductX v1.0 – Internal Use Only -->
+# Algorithmic Efficiency
 
-# ProductX  
-# Documentation Presentation
+To improve response times, we optimized the search algorithm.
 
-**Technical Writer**  
-25ds1000058@ds.study.iitm.ac.in  
+### Complexity Analysis
+We reduced the time complexity from quadratic to log-linear:
 
-> Maintainable, versioned, and exportable documentation for ProductX.
+$$
+T(n) = 2T\left(\frac{n}{2}\right) + O(n) \Rightarrow O(n \log n)
+$$
 
----
+### Probability Formula
+Success rate calculation:
 
-<!-- _header: **ProductX Docs** -->
-<!-- _footer: Why a Marp-based deck? -->
-
-## Objectives
-
-- Maintain documentation as **Markdown** in version control (Git)
-- Reuse content for:
-  - Web (HTML via GitHub Pages)
-  - PDF handouts
-  - PowerPoint slide decks
-- Keep slides **close to the source docs** to avoid duplication
-- Enable **automated builds** via CI/CD
+The probability of collision is defined as $P(A) \approx 1 - e^{-\frac{n^2}{2d}}$.
 
 ---
 
-<!-- _header: **ProductX Docs** -->
-<!-- _footer: Repository layout -->
+# Internal Roadmap
 
-## Repository Structure
+This slide uses explicit **local directives** to change the background color, text color, and header for this specific slide only.
 
-| Path                | Purpose                           |
-| ------------------- | --------------------------------- |
-| `docs/slides.md`    | Main Marp presentation            |
-| `docs/images/`      | Diagrams & screenshots            |
-| `docs/themes/`      | Optional custom CSS themes        |
-| `package.json`      | Build scripts for Marp CLI        |
-| `.github/workflows` | CI to export HTML/PDF/PPTX        |
+1. **Q1:** Beta testing with stakeholders
+2. **Q2:** Public API release
+3. **Q3:** Deprecation of V1.0 endpoints
 
-- Single source of truth in Git  
-- Reviewable via pull requests  
-- Easy rollback by tagging releases  
-
----
-
-<!-- _header: **ProductX Docs** -->
-<!-- _footer: Background image example -->
-
-![bg cover](images/productx-architecture.png)
-
-# ProductX Architecture
-
-- High-level system diagram as background  
-- Foreground text kept intentionally minimal  
-
-> Replace `images/productx-architecture.png` with your actual architecture image.
-
----
-
-<!-- _header: **ProductX Docs** -->
-<!-- _footer: Styling via directives -->
-<!-- _backgroundColor: #020617 -->
-<!-- _color: #e5e7eb -->
-<!-- _class: lead -->
-
-# Marp Directives in Use
-
-- `paginate: true` – page numbers on every slide  
-- `<!-- _header: ... -->` – persistent slide header  
-- `<!-- _footer: ... -->` – version + confidentiality footer  
-- `<!-- _class: lead -->` – emphasize key slides  
-- `<!-- _backgroundColor: ... -->` / `<!-- _color: ... -->` – per-slide styling  
-- `![bg cover](...)` – full-slide background images  
-
-All directives live in the same Markdown file for easy maintenance.
-
----
-
-<!-- _header: **ProductX Docs** -->
-<!-- _footer: Build & export with Marp -->
-
-## Build & Export (Marp CLI)
-
-```bash
-# HTML for web (e.g., GitHub Pages)
-marp docs/slides.md -o docs/dist/slides.html
-
-# PDF handout
-marp docs/slides.md --pdf --allow-local-files
-
-# PowerPoint deck
-marp docs/slides.md --pptx
-
-# Images for marketing or docs
-marp docs/slides.md --images png
+```javascript
+// Deprecation Warning Example
+console.warn("Endpoint /v1/auth is deprecated. Use /v2/auth.");
